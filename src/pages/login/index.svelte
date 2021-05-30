@@ -7,7 +7,6 @@
   function login() {
     isLoading = true;
     loginWithPopup();
-    isLoading = false;
   }
 </script>
 

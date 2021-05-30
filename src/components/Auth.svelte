@@ -12,7 +12,15 @@
     });
   }
 
-  createClient();
+  createClient().then(() => {
+    isAuth();
+  });
+
+  function isAuth() {
+    client.isAuthenticated().then((isAuth) => {
+      isAuthenticated.set(isAuth);
+    });
+  }
 
   function getUser() {
     const user = client.getUser();
