@@ -18,6 +18,7 @@
 
   function isAuth() {
     client.isAuthenticated().then((isAuth) => {
+      getUser();
       isAuthenticated.set(isAuth);
     });
   }
