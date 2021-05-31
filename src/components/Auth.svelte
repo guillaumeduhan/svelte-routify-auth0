@@ -19,7 +19,6 @@
   function isAuth() {
     client.isAuthenticated().then((isAuth) => {
       getUser();
-      isAuthenticated.set(isAuth);
     });
   }
 
@@ -28,8 +27,10 @@
 
     user
       .then((userData) => {
-        isAuthenticated.set(true);
         userStore.set(userData);
+        if (userData) {
+          isAuthenticated.set(true);
+        }
       })
       .catch((err) => {
         return err;

@@ -17,6 +17,8 @@
 </script>
 
 <main>
-  <p>You are logged in as {user.given_name}.</p>
+  {#if user}
+    <p>You are logged in as {user.given_name}.</p>
+  {/if}
   <Button on:click={logoutUser} {isLoading} title={"Logout from Auth0"} />
 </main>
